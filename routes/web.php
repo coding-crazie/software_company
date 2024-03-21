@@ -50,7 +50,16 @@ Route::post('reset-password', [AuthController::class, 'submitResetPasswordForm']
 
 // Client Routes 
 Route::get('dashboard', [ClientController::class, 'index']);
+Route::get('/My-Projects', [ClientController::class, 'my_projects']);
+Route::get('/My-New-Ticket', [ClientController::class, 'ticket_page']);
+Route::get('/My-Tickets', [ClientController::class, 'show_tickets']);
+Route::get('/My-Project-Images/{id}', [ClientController::class, 'see_project_images']);
+Route::get('/My-Project-Remarks/{id}', [ClientController::class, 'remarks_page']);
+Route::post('/Project-Remarks', [ClientController::class, 'create_project_remarks'])->name('create_project_remarks');
+Route::post('/New-Ticket-Post', [ClientController::class, 'create_new_ticket'])->name('create_new_ticket_client');
 
+
+Route::get('My-Profile', [ClientController::class, 'show_profile'])->name('show_profile');
 
 
 
@@ -80,27 +89,21 @@ Route::get('/New-Project-Images/{id}', [AdminController::class, 'see_project_ima
 Route::get('/Edit-Project/{id}', [AdminController::class, 'edit_project'])->middleware('auth','can:isAdmin');
 Route::get('/Send-Confirm-Project-Email/{id}', [AdminController::class, 'project_confirm'])->middleware('auth','can:isAdmin');
 Route::get('/Delete-Project/{id}', [AdminController::class, 'delete_project'])->middleware('auth','can:isAdmin');
-Route::get('/My-Projects', [AdminController::class, 'my_projects'])->middleware('auth','can:isAdmin');
+Route::get('/Admin-Projects', [AdminController::class, 'my_projects'])->middleware('auth','can:isAdmin');
 Route::get('/Register-New-Client', [AdminController::class, 'new_user_form'])->middleware('auth','can:isAdmin');
 Route::post('/Post-New-Client', [AdminController::class, 'make_user'])->name('make_user')->middleware('auth','can:isAdmin');
 Route::post('/Post-New-Project', [AdminController::class, 'create_project'])->name('create_project')->middleware('auth','can:isAdmin');
 Route::post('/Update-Project', [AdminController::class, 'update_project'])->name('update_project')->middleware('auth','can:isAdmin');
-Route::get('/My-Clients', [AdminController::class, 'all_clients'])->name('all_clients')->middleware('auth','can:isAdmin');
-Route::get('/My-Mails', [AdminController::class, 'my_emails'])->name('my_emails')->middleware('auth','can:isAdmin');
+Route::get('/Admin-Clients', [AdminController::class, 'all_clients'])->name('all_clients')->middleware('auth','can:isAdmin');
+Route::get('/Admin-Mails', [AdminController::class, 'my_emails'])->name('my_emails')->middleware('auth','can:isAdmin');
 Route::get('/edit-client-account/{id}', [AdminController::class, 'edit_client'])->middleware('auth','can:isAdmin');
 Route::get('/delete-client-account/{id}', [AdminController::class, 'delete_client'])->middleware('auth','can:isAdmin');
 Route::post('/update-client-account', [AdminController::class, 'update_client_acc'])->name("update_client_acc")->middleware('auth','can:isAdmin');
 Route::get('/Admin-Mail-Box', [AdminController::class, 'Mail_box'])->middleware('auth','can:isAdmin');
 Route::post('/Admin-Mail-Box-Sent', [AdminController::class, 'MakeMail'])->name('MakeMail')->middleware('auth','can:isAdmin');
-
-
-
-
 Route::get('/Add-Project-Images/{id}', [AdminController::class, 'new_project_images'])->middleware('auth','can:isAdmin');
 Route::post('/Add-Images', [AdminController::class, 'adding_images'])->name('adding_images')->middleware('auth','can:isAdmin');
-
-
-Route::get('/My-Tickets', [AdminController::class, 'show_tickets'])->middleware('auth','can:isAdmin');
+Route::get('/Admin-Tickets', [AdminController::class, 'show_tickets'])->middleware('auth','can:isAdmin');
 Route::get('/New-Ticket', [AdminController::class, 'create_ticket'])->middleware('auth','can:isAdmin');
 Route::post('/New-Ticket-Form', [AdminController::class, 'create_new_ticket'])->name('create_new_ticket')->middleware('auth','can:isAdmin');
 Route::get('/Edit-Ticket/{id}', [AdminController::class, 'edit_ticket'])->middleware('auth','can:isAdmin');

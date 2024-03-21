@@ -74,7 +74,7 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/My-Clients">Clients Details</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/Admin-Clients">Clients Details</a></li>
             <li class="nav-item"> <a class="nav-link" href="/Register-New-Client">Add New Client </a></li>
           </ul>
         </div>
@@ -91,7 +91,7 @@
         </a>
         <div class="collapse" id="project">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/My-Projects">My Projects</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/Admin-Projects">My Projects</a></li>
             <li class="nav-item"> <a class="nav-link" href="/New-Project">New Project</a></li>
           </ul>
         </div>
@@ -109,7 +109,7 @@
         </a>
         <div class="collapse" id="Tickets">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/My-Tickets">Tickets </a></li>
+            <li class="nav-item"> <a class="nav-link" href="/Admin-Tickets">Tickets </a></li>
             <li class="nav-item"> <a class="nav-link" href="/New-Ticket">New Ticket </a></li>
           </ul>
         </div>
@@ -126,7 +126,7 @@
         <div class="collapse" id="Emails">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/Admin-Mail-Box">Compose Email</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/My-Mails">All Emails</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/Admin-Mails">All Emails</a></li>
           </ul>
         </div>
       </li>
